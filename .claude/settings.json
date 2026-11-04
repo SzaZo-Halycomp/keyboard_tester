@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -m py_compile:*)",
+      "Bash(python3 /srv/keyboardtest/keyboardtest.py --list)",
+      "Bash(cat /proc/bus/input/devices)",
+      "Bash(cat /sys/class/dmi/id/*)",
+      "Bash(/srv/keyboardtest/.claude/scripts/run_sims.sh:*)"
+    ]
+  }
+}

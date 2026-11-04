@@ -1,0 +1,6 @@
+# test output: contains serial numbers / hostnames of tested laptops
+reports/
+__pycache__/
+*.pyc
+# local Claude Code settings
+.claude/settings.local.json

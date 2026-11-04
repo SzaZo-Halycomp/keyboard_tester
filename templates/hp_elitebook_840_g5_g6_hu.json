@@ -1,0 +1,682 @@
+{
+  "name": "HP EliteBook 840 G5 / G6 - Hungarian (ISO)",
+  "match": [
+    "EliteBook 840 G5",
+    "EliteBook 840 G6"
+  ],
+  "layout": "hu",
+  "timeout": 5,
+  "notes": [
+    "Layout from photo + real test run on 840 G6 (BIOS action-keys mode ON).",
+    "F-keys list both codes: plain F-code and the action code.",
+    "silent_in_action_mode: key sends nothing without Fn in action-keys mode -> prompted as 'Fn + Fx'.",
+    "combo: modifier set the key sends on its own (calendar/screen keys send Ctrl+Alt + an unmapped scancode).",
+    "accept_scan: any unmapped scancode (SCAN_xx) not used by another key also passes.",
+    "840 G6 run 2026-11-04 (action mode OFF): Screen key = Ctrl+Alt+SCAN_6d, Fn+F11 = SCAN_f8, F12 = KEY_F12."
+  ],
+  "rows": [
+    [
+      {
+        "label": "Esc",
+        "codes": [
+          "KEY_ESC"
+        ],
+        "w": 0.912
+      },
+      {
+        "label": "F1",
+        "codes": [
+          "KEY_F1",
+          "KEY_SWITCHVIDEOMODE"
+        ],
+        "w": 0.912,
+        "mode_probe": true
+      },
+      {
+        "label": "F2",
+        "codes": [
+          "KEY_F2"
+        ],
+        "w": 0.912
+      },
+      {
+        "label": "F3",
+        "codes": [
+          "KEY_F3",
+          "KEY_BRIGHTNESSDOWN"
+        ],
+        "w": 0.912
+      },
+      {
+        "label": "F4",
+        "codes": [
+          "KEY_F4",
+          "KEY_BRIGHTNESSUP"
+        ],
+        "w": 0.912
+      },
+      {
+        "label": "F5",
+        "codes": [
+          "KEY_F5",
+          "KEY_MUTE"
+        ],
+        "w": 0.912
+      },
+      {
+        "label": "F6",
+        "codes": [
+          "KEY_F6",
+          "KEY_VOLUMEDOWN"
+        ],
+        "w": 0.912
+      },
+      {
+        "label": "F7",
+        "codes": [
+          "KEY_F7",
+          "KEY_VOLUMEUP"
+        ],
+        "w": 0.912
+      },
+      {
+        "label": "F8",
+        "codes": [
+          "KEY_F8",
+          "KEY_MICMUTE"
+        ],
+        "w": 0.912
+      },
+      {
+        "label": "F9",
+        "codes": [
+          "KEY_F9"
+        ],
+        "w": 0.912,
+        "silent_in_action_mode": true
+      },
+      {
+        "label": "F10",
+        "codes": [
+          "KEY_F10",
+          "KEY_NUMLOCK"
+        ],
+        "w": 0.912
+      },
+      {
+        "label": "F11",
+        "codes": [
+          "KEY_F11",
+          "KEY_RFKILL",
+          "KEY_WLAN",
+          "SCAN_f8"
+        ],
+        "w": 0.912,
+        "silent_in_action_mode": true
+      },
+      {
+        "label": "F12",
+        "codes": [
+          "KEY_F12"
+        ],
+        "combo": [
+          "KEY_LEFTCTRL",
+          "KEY_LEFTALT"
+        ],
+        "accept_scan": true,
+        "w": 0.912
+      },
+      {
+        "label": "Screen",
+        "codes": [
+          "SCAN_6d"
+        ],
+        "w": 0.912,
+        "name": "Screen key (monitor icon)"
+      },
+      {
+        "label": "Call",
+        "codes": [
+          "KEY_PICKUP_PHONE"
+        ],
+        "w": 0.912,
+        "name": "Call key (green phone)"
+      },
+      {
+        "label": "Hangup",
+        "codes": [
+          "KEY_HANGUP_PHONE"
+        ],
+        "w": 0.912,
+        "name": "Hang-up key (red phone)"
+      },
+      {
+        "label": "Del",
+        "codes": [
+          "KEY_DELETE"
+        ],
+        "w": 0.912,
+        "name": "Delete"
+      }
+    ],
+    [
+      {
+        "label": "0",
+        "codes": [
+          "KEY_GRAVE"
+        ],
+        "name": "0 (left of 1)"
+      },
+      {
+        "label": "1",
+        "codes": [
+          "KEY_1"
+        ]
+      },
+      {
+        "label": "2",
+        "codes": [
+          "KEY_2"
+        ]
+      },
+      {
+        "label": "3",
+        "codes": [
+          "KEY_3"
+        ]
+      },
+      {
+        "label": "4",
+        "codes": [
+          "KEY_4"
+        ]
+      },
+      {
+        "label": "5",
+        "codes": [
+          "KEY_5"
+        ]
+      },
+      {
+        "label": "6",
+        "codes": [
+          "KEY_6"
+        ]
+      },
+      {
+        "label": "7",
+        "codes": [
+          "KEY_7"
+        ]
+      },
+      {
+        "label": "8",
+        "codes": [
+          "KEY_8"
+        ]
+      },
+      {
+        "label": "9",
+        "codes": [
+          "KEY_9"
+        ]
+      },
+      {
+        "label": "Ö",
+        "codes": [
+          "KEY_0"
+        ]
+      },
+      {
+        "label": "Ü",
+        "codes": [
+          "KEY_MINUS"
+        ]
+      },
+      {
+        "label": "Ó",
+        "codes": [
+          "KEY_EQUAL"
+        ]
+      },
+      {
+        "label": "Backspace",
+        "codes": [
+          "KEY_BACKSPACE"
+        ],
+        "w": 1.5
+      },
+      {
+        "label": "Home",
+        "codes": [
+          "KEY_HOME"
+        ]
+      }
+    ],
+    [
+      {
+        "label": "Tab",
+        "codes": [
+          "KEY_TAB"
+        ],
+        "w": 1.5
+      },
+      {
+        "label": "Q",
+        "codes": [
+          "KEY_Q"
+        ]
+      },
+      {
+        "label": "W",
+        "codes": [
+          "KEY_W"
+        ]
+      },
+      {
+        "label": "E",
+        "codes": [
+          "KEY_E"
+        ]
+      },
+      {
+        "label": "R",
+        "codes": [
+          "KEY_R"
+        ]
+      },
+      {
+        "label": "T",
+        "codes": [
+          "KEY_T"
+        ]
+      },
+      {
+        "label": "Z",
+        "codes": [
+          "KEY_Y"
+        ]
+      },
+      {
+        "label": "U",
+        "codes": [
+          "KEY_U"
+        ]
+      },
+      {
+        "label": "I",
+        "codes": [
+          "KEY_I"
+        ]
+      },
+      {
+        "label": "O",
+        "codes": [
+          "KEY_O"
+        ]
+      },
+      {
+        "label": "P",
+        "codes": [
+          "KEY_P"
+        ]
+      },
+      {
+        "label": "Ő",
+        "codes": [
+          "KEY_LEFTBRACE"
+        ]
+      },
+      {
+        "label": "Ú",
+        "codes": [
+          "KEY_RIGHTBRACE"
+        ]
+      },
+      {
+        "label": "Enter",
+        "codes": [
+          "KEY_ENTER"
+        ]
+      },
+      {
+        "label": "PgUp",
+        "codes": [
+          "KEY_PAGEUP"
+        ],
+        "name": "Page Up"
+      }
+    ],
+    [
+      {
+        "label": "Caps",
+        "codes": [
+          "KEY_CAPSLOCK"
+        ],
+        "w": 1.75,
+        "name": "Caps Lock"
+      },
+      {
+        "label": "A",
+        "codes": [
+          "KEY_A"
+        ]
+      },
+      {
+        "label": "S",
+        "codes": [
+          "KEY_S"
+        ]
+      },
+      {
+        "label": "D",
+        "codes": [
+          "KEY_D"
+        ]
+      },
+      {
+        "label": "F",
+        "codes": [
+          "KEY_F"
+        ]
+      },
+      {
+        "label": "G",
+        "codes": [
+          "KEY_G"
+        ]
+      },
+      {
+        "label": "H",
+        "codes": [
+          "KEY_H"
+        ]
+      },
+      {
+        "label": "J",
+        "codes": [
+          "KEY_J"
+        ]
+      },
+      {
+        "label": "K",
+        "codes": [
+          "KEY_K"
+        ]
+      },
+      {
+        "label": "L",
+        "codes": [
+          "KEY_L"
+        ]
+      },
+      {
+        "label": "É",
+        "codes": [
+          "KEY_SEMICOLON"
+        ]
+      },
+      {
+        "label": "Á",
+        "codes": [
+          "KEY_APOSTROPHE"
+        ]
+      },
+      {
+        "label": "Ű",
+        "codes": [
+          "KEY_BACKSLASH"
+        ]
+      },
+      {
+        "label": "Enter",
+        "codes": [],
+        "test": false,
+        "mirror_of": "Enter",
+        "w": 0.75
+      },
+      {
+        "label": "PgDn",
+        "codes": [
+          "KEY_PAGEDOWN"
+        ],
+        "name": "Page Down"
+      }
+    ],
+    [
+      {
+        "label": "Shift",
+        "codes": [
+          "KEY_LEFTSHIFT"
+        ],
+        "w": 1.25,
+        "name": "Left Shift"
+      },
+      {
+        "label": "Í",
+        "codes": [
+          "KEY_102ND"
+        ],
+        "name": "Í (next to Left Shift)"
+      },
+      {
+        "label": "Y",
+        "codes": [
+          "KEY_Z"
+        ]
+      },
+      {
+        "label": "X",
+        "codes": [
+          "KEY_X"
+        ]
+      },
+      {
+        "label": "C",
+        "codes": [
+          "KEY_C"
+        ]
+      },
+      {
+        "label": "V",
+        "codes": [
+          "KEY_V"
+        ]
+      },
+      {
+        "label": "B",
+        "codes": [
+          "KEY_B"
+        ]
+      },
+      {
+        "label": "N",
+        "codes": [
+          "KEY_N"
+        ]
+      },
+      {
+        "label": "M",
+        "codes": [
+          "KEY_M"
+        ]
+      },
+      {
+        "label": ",",
+        "codes": [
+          "KEY_COMMA"
+        ]
+      },
+      {
+        "label": ".",
+        "codes": [
+          "KEY_DOT"
+        ]
+      },
+      {
+        "label": "-",
+        "codes": [
+          "KEY_SLASH"
+        ]
+      },
+      {
+        "label": "Shift R",
+        "codes": [
+          "KEY_RIGHTSHIFT"
+        ],
+        "w": 2.25,
+        "name": "Right Shift"
+      },
+      {
+        "label": "End",
+        "codes": [
+          "KEY_END"
+        ]
+      }
+    ],
+    [
+      {
+        "label": "Ctrl",
+        "codes": [
+          "KEY_LEFTCTRL"
+        ],
+        "name": "Left Ctrl"
+      },
+      {
+        "label": "Fn",
+        "codes": [],
+        "test": false
+      },
+      {
+        "label": "Win",
+        "codes": [
+          "KEY_LEFTMETA"
+        ],
+        "name": "Windows key"
+      },
+      {
+        "label": "Alt",
+        "codes": [
+          "KEY_LEFTALT"
+        ],
+        "name": "Left Alt"
+      },
+      {
+        "label": "Space",
+        "codes": [
+          "KEY_SPACE"
+        ],
+        "w": 5
+      },
+      {
+        "label": "AltGr",
+        "codes": [
+          "KEY_RIGHTALT"
+        ]
+      },
+      {
+        "label": "Menu",
+        "codes": [
+          "KEY_COMPOSE"
+        ],
+        "name": "Menu key"
+      },
+      {
+        "label": "Ctrl R",
+        "codes": [
+          "KEY_RIGHTCTRL"
+        ],
+        "name": "Right Ctrl"
+      },
+      {
+        "label": "Left",
+        "codes": [
+          "KEY_LEFT"
+        ],
+        "x": 12.5,
+        "name": "Left arrow"
+      },
+      {
+        "label": "Up",
+        "codes": [
+          "KEY_UP"
+        ],
+        "name": "Up arrow"
+      },
+      {
+        "label": "Right",
+        "codes": [
+          "KEY_RIGHT"
+        ],
+        "name": "Right arrow"
+      }
+    ],
+    [
+      {
+        "label": "Down",
+        "codes": [
+          "KEY_DOWN"
+        ],
+        "x": 13.5,
+        "name": "Down arrow"
+      }
+    ]
+  ],
+  "fn_tests": [
+    {
+      "keys": "Fn + F1",
+      "mode": "signal",
+      "codes_action": [
+        "KEY_F1"
+      ],
+      "codes_plain": [
+        "KEY_SWITCHVIDEOMODE"
+      ],
+      "see": "Checks the Fn key itself (Fn switches the F-key mode). Signal check only."
+    },
+    {
+      "fkey": "F3",
+      "mode": "confirm",
+      "see": "Screen brightness DECREASES."
+    },
+    {
+      "fkey": "F4",
+      "mode": "confirm",
+      "see": "Screen brightness INCREASES."
+    },
+    {
+      "fkey": "F5",
+      "mode": "confirm",
+      "see": "Speaker MUTE toggles (LED on the key changes, or the volume indicator shows mute)."
+    },
+    {
+      "fkey": "F6",
+      "mode": "confirm",
+      "see": "Volume DOWN (on-screen volume indicator)."
+    },
+    {
+      "fkey": "F7",
+      "mode": "confirm",
+      "see": "Volume UP (on-screen volume indicator)."
+    },
+    {
+      "fkey": "F8",
+      "mode": "confirm",
+      "see": "Microphone MUTE toggles (LED on the key changes, or the indicator shows it)."
+    },
+    {
+      "fkey": "F11",
+      "mode": "confirm",
+      "see": "Airplane mode toggles (Wi-Fi / airplane indicator). Press it AGAIN to switch it back before answering!"
+    },
+    {
+      "keys": "Fn + Right Shift",
+      "mode": "signal",
+      "codes": [
+        "KEY_SYSRQ",
+        "KEY_PRINT"
+      ],
+      "see": "Print Screen ('prt scr' is printed on the RIGHT SHIFT key - hold Fn, press Right Shift). Signal check only - if nothing arrives press BACKSPACE."
+    }
+  ]
+}
