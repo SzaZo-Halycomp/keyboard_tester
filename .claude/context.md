@@ -4,7 +4,7 @@ Last updated: 2026-11-04. Details: `notes/working.md` (how it works), `notes/har
 
 ## What it is
 
-`keyboardtest.py` (v1.4) tests a laptop keyboard key by key on Linux, for refurbishing/service use.
+`keyboardtest.py` (v1.4.1) tests a laptop keyboard key by key on Linux, for refurbishing/service use.
 - Grabs the keyboard devices exclusively (EVIOCGRAB) so the OS doesn't react, shows the key to press on a
   curses screen with an on-screen keyboard map, beeps, and waits 5 s.
 - Then releases the keyboard and tests Fn/action keys (brightness, volume, mute…): the tester confirms what happened.

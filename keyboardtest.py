@@ -41,7 +41,7 @@ import threading
 import time
 import wave
 
-VERSION = "1.4"
+VERSION = "1.4.1"
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 # --------------------------------------------------------------------------
