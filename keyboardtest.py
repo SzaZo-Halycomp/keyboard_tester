@@ -41,7 +41,7 @@ import threading
 import time
 import wave
 
-VERSION = "1.4.1"
+VERSION = "1.4.2"
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 # --------------------------------------------------------------------------
@@ -441,6 +441,50 @@ class Input:
             d.close()
 
 
+def ensure_input_modules(verbose=True):
+    """Minimal live systems may not load evdev: then no /dev/input/event* exists.
+    As root, load evdev (and hp_wmi on HP machines for the hotkey device)."""
+    def has_event_nodes():
+        return any(d.get("path") for d in scan_devices())
+    wanted = []
+    if not has_event_nodes():
+        wanted.append("evdev")
+    if read_dmi("sys_vendor").upper().startswith("HP") and \
+            not any(d.get("name") == "HP WMI hotkeys" for d in scan_devices()):
+        wanted.append("hp_wmi")
+    if not wanted:
+        return []
+    if os.geteuid() != 0:
+        if "evdev" in wanted:
+            sys.exit("No /dev/input/event* devices: the kernel module 'evdev' is not loaded.\n"
+                     "Run with sudo (the script loads it), or: sudo modprobe evdev")
+        return []
+    loaded = []
+    for mod in wanted:
+        r = subprocess.run(["modprobe", mod], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        if r.returncode == 0:
+            loaded.append(mod)
+    if "evdev" in wanted and "evdev" not in loaded:
+        kver = os.uname().release
+        if not os.path.isdir("/lib/modules/" + kver):
+            have = ", ".join(sorted(os.listdir("/lib/modules"))) if os.path.isdir("/lib/modules") else "none"
+            sys.exit("Cannot load the 'evdev' kernel module: the running kernel is %s but the installed\n"
+                     "modules are for: %s. The kernel and the system don't match (e.g. a network-boot menu\n"
+                     "serving an older vmlinuz/initrd than the live image). Boot the matching kernel." % (kver, have))
+        sys.exit("Cannot load the 'evdev' kernel module (modprobe evdev failed), so there is no\n"
+                 "/dev/input/event* device to read the keyboard from.")
+    if loaded:
+        end = time.monotonic() + 3       # udev needs a moment to create the nodes
+        while time.monotonic() < end:
+            if has_event_nodes() and all(os.path.exists(d["path"]) for d in scan_devices() if d.get("path")):
+                break
+            time.sleep(0.1)
+        time.sleep(0.3)
+        if verbose:
+            print("Loaded kernel module(s): %s" % ", ".join(loaded))
+    return loaded
+
+
 def open_devices(include_usb=False, only=None):
     infos = [d for d in scan_devices() if is_keyboard_like(d, include_usb)]
     if only:
@@ -455,7 +499,17 @@ def open_devices(include_usb=False, only=None):
         sys.exit("No permission to read %s.\nRun with sudo, or add your user to the "
                  "'input' group." % ", ".join(errors))
     if not devs:
-        sys.exit("No keyboard device found.")
+        lines = ["No keyboard device found. Input devices seen:"]
+        for d in scan_devices():
+            keys = _decode_bitmap(d.get("bits_KEY", ""))
+            why = ("no /dev/input/event* node (evdev not loaded?)" if not d.get("path") else
+                   "excluded by name" if d.get("name") in EXCLUDED_DEVICES else
+                   "no keys" if not keys else
+                   "has mouse/touch buttons" if any(0x110 <= k <= 0x14F for k in keys) else
+                   "USB - use --include-usb" if d.get("bus") == BUS_USB and not include_usb else
+                   "not selected by --device" if only else "?")
+            lines.append("  %-34s %s" % (d.get("name", "?"), why))
+        sys.exit("\n".join(lines))
     return devs
 
 
@@ -1489,6 +1543,8 @@ def main():
 
     locale.setlocale(locale.LC_ALL, "")
     os.environ.setdefault("ESCDELAY", "25")
+
+    ensure_input_modules()
 
     if args.list:
         for d in scan_devices():

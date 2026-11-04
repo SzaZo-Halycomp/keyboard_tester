@@ -40,6 +40,7 @@ Emergency exit during the test: press **Esc 3 times** quickly. The keyboard is a
 | `--include-usb`, `--device X` | Also use USB keyboards / only use the given device |
 
 Without sudo, add your user to the `input` group (the serial number is then not shown in the report).
+As root the script loads the `evdev` kernel module if needed (minimal live systems), and `hp_wmi` on HP machines.
 
 ## Supported keyboards
 

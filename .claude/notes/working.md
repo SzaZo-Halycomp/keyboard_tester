@@ -52,4 +52,7 @@ Emergency exit: Esc 3x within 1.5 s. CLI: `--learn`, `--monitor`, `--list`, `--t
 - Grabbing while a key is held leaves the OS with a stuck key: `grab_all`/`ungrab_all` wait for release.
 - When ungrabbed, the kernel sometimes sends only MSC_SCAN for a release (its key state was out of sync);
   handled by the orphan resolution in `Device._flush_scan`.
+- No `/dev/input/event*` = the `evdev` module isn't loaded (minimal/live systems). `ensure_input_modules()` loads
+  evdev (+ hp_wmi on HP) as root; if `/lib/modules/$(uname -r)` is missing it reports a kernel/modules mismatch
+  (seen on a network-booted live image whose boot menu served an older kernel).
 - HP action-keys mode can flip between runs (Fn lock = Fn + Left Shift).
