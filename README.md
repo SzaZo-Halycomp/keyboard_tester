@@ -58,3 +58,7 @@ The template format is described in `.claude/notes/working.md`.
 ## Development
 
 Simulations with fake key input (no root needed): `.claude/scripts/run_sims.sh`.
+
+## License
+
+MIT - see [LICENSE](LICENSE).
