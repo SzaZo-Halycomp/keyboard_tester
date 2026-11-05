@@ -28,6 +28,6 @@ Run: `sudo python3 /srv/keyboardtest/keyboardtest.py` in a real terminal (not vi
 1. Check on the next real run: the beep is audible under sudo (`sound` method runs pw-play as SUDO_USER).
 2. Fn + Right Shift = Print Screen? Unverified (the user pressed R last time due to an unclear label, now fixed).
 3. F12 (calendar) code in action-keys mode ON: sends Ctrl+Alt + an unknown scancode, capture it from a keylog.
-4. The user's network-booted live test machine (840 G5) boots kernel 6.12.73 but the image has 6.12.94 modules:
-   evdev can't load there until the boot server serves the matching vmlinuz/initrd (user's side).
+4. The network-booted 840 G5 test machine had a kernel/modules mismatch (evdev couldn't load); the user fixed the
+   boot server on 2026-11-05. Next: a real run on the G5 to verify the shared template.
 5. More models/layouts when the user asks (start from a photo + one `--monitor`/test run).
