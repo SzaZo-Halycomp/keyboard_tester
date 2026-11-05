@@ -18,6 +18,10 @@ is grabbed, then Fn/action keys, then writes TXT/JSON/HTML/keylog reports. Read 
 - I can't read `/dev/input` (not root, no sudo password). Test with the fake-input simulations in `.claude/scripts/`,
   and let the user run the real test in a separate terminal (`!` commands can't do sudo or curses).
 - `.claude/settings.json` (permission allowlist) only changes when the user explicitly asks for it.
+- **The GitHub repo is public** (github.com/SzaZo-Halycomp/keyboard_tester). Never commit reports, serial numbers,
+  hostnames, internal IPs or passwords. Commit as `SzaZo-Halycomp <84787263+SzaZo-Halycomp@users.noreply.github.com>`
+  (repo-local git config); never put the user's private e-mail in commits or send it to outside services.
+- Commit/push/release only when the user asks. Releases: annotated tag `vX.Y.Z` = `VERSION` in `keyboardtest.py`.
 
 ## How the user works
 

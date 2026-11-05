@@ -1,6 +1,6 @@
 # Context: Keyboard tester (one-page summary)
 
-Last updated: 2026-11-04. Details: `notes/working.md` (how it works), `notes/hardware.md` (model facts).
+Last updated: 2026-11-05. Details: `notes/working.md` (how it works), `notes/hardware.md` (model facts).
 
 ## What it is
 
@@ -14,6 +14,8 @@ Run: `sudo python3 /srv/keyboardtest/keyboardtest.py` in a real terminal (not vi
 
 ## Where it stands
 
+- **Released:** v1.4.2 (latest) and v1.4.1 on github.com/SzaZo-Halycomp/keyboard_tester (public, MIT).
+  v1.4 release + tag were deleted at the user's request.
 - **Template done and verified:** HP EliteBook 840 G5/G6, Hungarian ISO
   (`templates/hp_elitebook_840_g5_g6_hu.json`). The user's 840 G6 passed 86/86 keys on 2026-11-04.
 - **Features:** layout check, beep on prompt + low tone on fail, retry of failed keys, tester feedback per failed key,
